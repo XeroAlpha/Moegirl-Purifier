@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         MoeSkinRemoveAds
+// @name         萌百去广告
 // @namespace    http://projectxero.top/
-// @version      0.1
-// @description  Remove all the MoeSkin Ads.
+// @version      1.0
+// @description  移除萌百广告。
 // @author       ProjectXero
 // @match        *://*.moegirl.org.cn/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
@@ -15,6 +15,9 @@
     const rewrite = function(url) {
         if (url === "https://app.moegirl.org.cn/insight/ads.config.yml.json") {
             return "https://projectxero.top/moeskin-remove-ads/ads.config.yml.json";
+        }
+        if (url === "https://storage.moegirl.org.cn/insight/configs.json") {
+            return "https://projectxero.top/moeskin-remove-ads/insight.configs.json";
         }
         return url;
     };
